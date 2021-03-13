@@ -67,7 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
 	const rangeContextRegEx = /^(((\-{3}) .+ (\-{4}))|((\*{3}) .+ (\*{4})))$/
 
 	function updateDecorationsOnEditor(editor: vscode.TextEditor | undefined) {
-		if (editor?.document.languageId != 'diff') {
+		if (editor?.document.languageId != 'diff' && editor?.document.languageId != 'git-commit' ) {
 			return;
 		}
 
@@ -148,7 +148,7 @@ export function activate(context: vscode.ExtensionContext) {
 	}, null, context.subscriptions);
 
 	vscode.workspace.onDidOpenTextDocument(doc => {
-		if (doc.languageId != 'diff') {
+		if (doc.languageId != 'diff' && doc.languageId != 'git-commit') {
 			clearDecorationsOnEditor(vscode.window.activeTextEditor);
 		} else {
 			triggerUpdateActiveEditorDecorations();
