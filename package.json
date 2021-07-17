@@ -25,53 +25,90 @@
 			"properties": {
 				"diff-lang-colorizer.header.lightThemeForegroundColor": {
 					"type": "string",
+					"format": "color",
 					"default": "#EE8F00",
 					"markdownDescription": "CSS color of header line text (ex: 'diff --git...') on light themes"
 				},
 				"diff-lang-colorizer.header.darkThemeForegroundColor": {
 					"type": "string",
+					"format": "color",
 					"default": "#EE8F00",
 					"description": "CSS color of header line text (ex: 'diff --git...') on dark themes"
 				},
 				"diff-lang-colorizer.header.fontWeight": {
 					"type": "string",
 					"default": "bold",
-					"description": "CSS font-weight of header line text (ex: 'diff --git...')"
+					"description": "CSS font-weight of header line text (ex: 'diff --git...')",
+					"examples": [
+						"normal",
+						"bold",
+						"lighter",
+						"bolder"
+					]
 				},
 				"diff-lang-colorizer.header.fontStyle": {
 					"type": "string",
 					"default": "normal",
-					"description": "CSS font-style of header line text (ex: 'diff --git...')"
+					"description": "CSS font-style of header line text (ex: 'diff --git...')",
+					"examples": [
+						"normal",
+						"italic",
+						"oblique"
+					]
 				},
 				"diff-lang-colorizer.range.lightThemeForegroundColor": {
 					"type": "string",
+					"format": "color",
 					"default": "#EE8F00",
 					"description": "CSS color of hunk range text (ex: '@@ -20,7 +20,7 @@') on light themes"
 				},
 				"diff-lang-colorizer.range.darkThemeForegroundColor": {
 					"type": "string",
+					"format": "color",
 					"default": "#EE8F00",
 					"description": "CSS color of hunk range text (ex: '@@ -20,7 +20,7 @@') on dark themes"
 				},
 				"diff-lang-colorizer.range.fontWeight": {
 					"type": "string",
 					"default": "normal",
-					"description": "CSS font-weight of hunk range text (ex: '@@ -20,7 +20,7 @@')"
+					"description": "CSS font-weight of hunk range text (ex: '@@ -20,7 +20,7 @@')",
+					"examples": [
+						"normal",
+						"bold",
+						"lighter",
+						"bolder"
+					]
 				},
 				"diff-lang-colorizer.range.fontStyle": {
 					"type": "string",
 					"default": "italic",
-					"description": "CSS font-style of hunk range text (ex: '@@ -20,7 +20,7 @@')"
+					"description": "CSS font-style of hunk range text (ex: '@@ -20,7 +20,7 @@')",
+					"examples": [
+						"normal",
+						"italic",
+						"oblique"
+					]
 				},
 				"diff-lang-colorizer.extendedHeader.fontWeight": {
 					"type": "string",
 					"default": "normal",
-					"description": "CSS font-weight of extended header (lines between header line and hunk range)"
+					"description": "CSS font-weight of extended header (lines between header line and hunk range)",
+					"examples": [
+						"normal",
+						"bold",
+						"lighter",
+						"bolder"
+					]
 				},
 				"diff-lang-colorizer.extendedHeader.fontStyle": {
 					"type": "string",
 					"default": "italic",
-					"description": "CSS font-style of extended header (lines between header line and hunk range)"
+					"description": "CSS font-style of extended header (lines between header line and hunk range)",
+					"examples": [
+						"normal",
+						"italic",
+						"oblique"
+					]
 				},
 				"diff-lang-colorizer.extendedHeader.opacity": {
 					"type": "string",
