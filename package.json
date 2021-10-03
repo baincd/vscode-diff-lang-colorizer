@@ -114,6 +114,11 @@
 					"type": "string",
 					"default": "0.7",
 					"description": "CSS opacity of extended header (lines between header line and hunk range)"
+				},
+				"diff-lang-colorizer.updateDelay": {
+					"type": "integer",
+					"default": 100,
+					"markdownDescription": "Millisecond delay when updating background colors.\n\n*If experiencing issues with the editor background colors not being set or disappearing shortly after an editor is made visible, increasing this delay should help.*"
 				}
 			}
 		}

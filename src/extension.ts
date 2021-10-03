@@ -110,13 +110,16 @@ export function activate(context: vscode.ExtensionContext) {
 	let updateActiveEditorTimeout: NodeJS.Timer | undefined = undefined;
 	let updateAllEditorsTimeout: NodeJS.Timer | undefined = undefined;
 
+	function getUpdateDelay(): number {
+		return vscode.workspace.getConfiguration("diff-lang-colorizer").get<number>("updateDelay", 100);
+	}
 
 	function triggerUpdateActiveEditorDecorations() {
 		if (updateActiveEditorTimeout) {
 			clearTimeout(updateActiveEditorTimeout);
 			updateActiveEditorTimeout = undefined;
 		}
-		updateActiveEditorTimeout = setTimeout(() => updateDecorationsOnEditor(vscode.window.activeTextEditor), 100);
+		updateActiveEditorTimeout = setTimeout(() => updateDecorationsOnEditor(vscode.window.activeTextEditor), getUpdateDelay());
 	}
 
 	function triggerUpdateAllEditorsDecorations() {
@@ -124,7 +127,7 @@ export function activate(context: vscode.ExtensionContext) {
 			clearTimeout(updateAllEditorsTimeout);
 			updateAllEditorsTimeout = undefined;
 		}
-		updateAllEditorsTimeout = setTimeout(updateDecorationsOnAllVisibleEditors, 100);
+		updateAllEditorsTimeout = setTimeout(updateDecorationsOnAllVisibleEditors, getUpdateDelay());
 	}
 
 	triggerUpdateAllEditorsDecorations();
